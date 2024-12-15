@@ -38,3 +38,9 @@ print("myInt is \(type(of: myInt)) myDouble is \(type(of: myDouble))")
 /// ---
 /// `Bool` boolean give value `true` or `false`
 var isExist = true
+
+/// `String Interpolation` is insert property inside string, it can even run code inside it
+var age1 = 25
+var text1 = "age is \(age1)"
+var text2 = "is age over 25? \(age1 > 25)"
+/// ---
