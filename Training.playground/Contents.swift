@@ -25,3 +25,13 @@ over multiple \
 lines
 """
 print("\(str2)")
+/// ---
+
+/// `Double` is fractional number default property in swift
+var dbl1 = 3.14
+var dbl2: Double = 3.15
+print("dbl1 is \(type(of: dbl1)) \(dbl1)")
+print("dbl2 is \(type(of: dbl2)) \(dbl2)")
+/// ---
+/// `Bool` boolean give value `true` or `false`
+var isExist = true
