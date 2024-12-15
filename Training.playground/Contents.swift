@@ -44,3 +44,7 @@ var age1 = 25
 var text1 = "age is \(age1)"
 var text2 = "is age over 25? \(age1 > 25)"
 /// ---
+
+/// `let` is constants, it cannot cange value
+let text3 = "text"
+/// ---
