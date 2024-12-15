@@ -48,3 +48,8 @@ var text2 = "is age over 25? \(age1 > 25)"
 /// `let` is constants, it cannot cange value
 let text3 = "text"
 /// ---
+
+/// `Type annotation` if type annotation is not set it will be set default type based on value
+let text4 = "text" // set to string by default value
+let text5: String = "text" // set to string manually
+/// ---
