@@ -99,3 +99,78 @@ print(names.sorted())
 names.remove(at: 0)
 print(names)
 /// ---
+/// `Initializers` Is a function of struct that run on create object struct
+print("\n---Initializers---\n")
+struct Player {
+    var name: String
+    var level = 0 // property with value does not need to be in init
+    init() {
+        self.name = "Anonymous"
+    }
+}
+let player1 = Player() // it doesn't need to give param `name` same as `init` because `init` has no params
+struct Worker {
+    var name: String
+}
+extension Worker {
+    init() { // set init in extension not replace default init struct that set all property values
+        name = "NewBie"
+    }
+}
+let worker1 = Worker(name: "Test")
+let worker2 = Worker()
+/// ---
+/// `Refer to current instances` pointing to self object by using `self` key
+print("\n---Refer to current instances---\n")
+struct Student {
+    var name: String
+    init(name: String) {
+        self.name = name // `self.name` is Student.name, `name` is from param `init(name: String)`
+    }
+}
+/// ---
+/// `Lazy properties` is a property that will be initialized only when needed
+print("\n---Lazy properties---\n")
+struct Origin {
+    init() {
+        print("Origin created")
+    }
+}
+struct People {
+    var name: String
+    lazy var origin = Origin()
+    init(name: String ) {
+        self.name = name
+    }
+}
+var galih2 = People(name: "Galih")
+print("galih2 created")
+print("galih2 origin is \(galih2.origin)") // `"Origin created"` will print after `"galih2 created"`
+/// ---
+/// `Static properties and methods` is a property is not storen on instace of object but inside the opject itself
+print("\n---Static properties and methods---\n")
+struct Disciple {
+    static var count = 0
+    var name: String
+    init(name: String) {
+        Disciple.count += 1
+        self.name = name
+    }
+}
+print("before", Disciple.count)
+let galih3 = Disciple(name: "Galih3")
+let galih4 = Disciple(name: "Galih4")
+let galih5 = Disciple(name: "Galih5")
+print("after", Disciple.count)
+/// ---
+/// `Access control` is a way to restrict and control the value of property/methods and how to access the property/methods
+print("\n---Access control---\n")
+struct KTP {
+    private let id = UUID()
+    func getId() -> String {
+        return id.uuidString
+    }
+}
+let ktp = KTP()
+ktp.getId() // id can only be accessed by using getId(), ktp.id will not work
+/// ---
